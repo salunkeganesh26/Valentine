@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Will You Be My Valentine? ❤️</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;
+font-family:Arial,sans-serif;background:linear-gradient(135deg,#ff758c,#ff7eb3);overflow:hidden}
+.card{width:min(90%,420px);padding:42px 25px;text-align:center;background:#fff;border-radius:28px;
+box-shadow:0 15px 45px #0003;position:relative;z-index:2}
+h1{color:#e91e63;font-size:32px;margin:0 0 15px}p{color:#666;font-size:18px}
+button{border:0;border-radius:30px;padding:14px 27px;margin:10px;font-size:17px;font-weight:bold;cursor:pointer}
+#yes{background:#e91e63;color:white}#no{background:#eee;color:#555;position:relative}
+#msg{display:none;color:#e91e63;font-size:23px;font-weight:bold;margin-top:18px}
+.heart{position:fixed;bottom:-30px;font-size:25px;animation:float 5s linear infinite;opacity:.8}
+@keyframes float{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}
+</style>
+</head>
+<body>
+<div class="card">
+<div style="font-size:55px">💖</div>
+<h1>Will You Be My Valentine?</h1>
+<p>Ek chhota sa sawaal hai... ❤️</p>
+<button id="yes" onclick="yes()">YES ❤️</button>
+<button id="no" onmouseover="moveNo()" onclick="moveNo()">NO 😜</button>
+<div id="msg">Yayyy! 💕 I knew it! 🥰</div>
+</div>
+<script>
+function yes(){document.getElementById('msg').style.display='block';
+for(let i=0;i<25;i++){let h=document.createElement('div');h.className='heart';h.innerHTML='❤️';
+h.style.left=Math.random()*100+'vw';h.style.animationDelay=Math.random()*2+'s';document.body.appendChild(h);}}
+function moveNo(){let b=document.getElementById('no');b.style.position='fixed';
+b.style.left=Math.random()*75+10+'vw';b.style.top=Math.random()*75+10+'vh';}
+</script>
+</body>
+</html>
